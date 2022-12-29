@@ -2,7 +2,7 @@ import api from "$lib/api"
 import { gql } from "graphql-request"
 import type { Actions, PageServerLoad } from "./$types"
 
-export const createFavoriteMutation = gql`
+const createFavoriteMutation = gql`
   mutation CreateFavoriteMutation($siteId: ID, $userId: ID) {
     createFavorite(data: { site: { connect: { id: $siteId } }, user: { connect: { id: $userId } } }) {
       id
@@ -16,7 +16,7 @@ export const createFavoriteMutation = gql`
   }
 `
 
-export const deleteFavoriteMutation = gql`
+const deleteFavoriteMutation = gql`
   mutation DeleteFavoriteMutation($favoriteId: ID) {
     deleteFavorite(where: { id: $favoriteId }) {
       id

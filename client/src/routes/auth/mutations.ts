@@ -16,17 +16,3 @@ export const signInMutation = gql`
     }
   }
 `
-
-export const createFavoriteMutation = gql`
-  mutation CreateFavoriteMutation($siteId: ID, $userId: ID) {
-    createFavorite(data: { site: { connect: { id: $siteId } }, user: { connect: { id: $userId } } }) {
-      id
-      site {
-        name
-      }
-      user {
-        name
-      }
-    }
-  }
-`
