@@ -42,6 +42,7 @@ model Site {
   isFeatured               Boolean    @default(false)
   tags                     Tag[]      @relation("Site_tags")
   categories               Category[] @relation("Category_sites")
+  content                  String     @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
   favorites                Favorite[] @relation("Favorite_site")
   createdAt                DateTime?  @default(now())
 }

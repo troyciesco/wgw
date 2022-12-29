@@ -180,6 +180,7 @@ type Site {
   tagsCount(where: TagWhereInput! = {}): Int
   categories(where: CategoryWhereInput! = {}, orderBy: [CategoryOrderByInput!]! = [], take: Int, skip: Int! = 0): [Category!]
   categoriesCount(where: CategoryWhereInput! = {}): Int
+  content: Site_content_Document
   favorites(where: FavoriteWhereInput! = {}, orderBy: [FavoriteOrderByInput!]! = [], take: Int, skip: Int! = 0): [Favorite!]
   favoritesCount(where: FavoriteWhereInput! = {}): Int
   createdAt: DateTime
@@ -199,6 +200,10 @@ enum ResponsiveImageExtension {
   png
   webp
   gif
+}
+
+type Site_content_Document {
+  document(hydrateRelationships: Boolean! = false): JSON!
 }
 
 input SiteWhereUniqueInput {
@@ -254,6 +259,7 @@ input SiteUpdateInput {
   isFeatured: Boolean
   tags: TagRelateToManyForUpdateInput
   categories: CategoryRelateToManyForUpdateInput
+  content: JSON
   favorites: FavoriteRelateToManyForUpdateInput
   createdAt: DateTime
 }
@@ -294,6 +300,7 @@ input SiteCreateInput {
   isFeatured: Boolean
   tags: TagRelateToManyForCreateInput
   categories: CategoryRelateToManyForCreateInput
+  content: JSON
   favorites: FavoriteRelateToManyForCreateInput
   createdAt: DateTime
 }
