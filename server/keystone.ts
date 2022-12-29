@@ -24,8 +24,8 @@ export default withAuth(
       //   for more information on what database might be appropriate for you
       //   see https://keystonejs.com/docs/guides/choosing-a-database#title
       provider: "postgresql",
-      useMigrations: true,
-      url: process.env.DATABASE_URL || "",
+      // useMigrations: true,
+      url: process.env.DATABASE_URL || `postgres://${process.env.USER}@localhost/keystone-6-example`,
     },
     // db: {
     //   // we're using sqlite for the fastest startup experience
