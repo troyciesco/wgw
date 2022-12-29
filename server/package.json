@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "keystone dev",
     "start": "keystone start",
-    "build": "keystone build",
+    "build": "keystone build && keystone prisma migrate deploy",
     "postinstall": "keystone postinstall",
     "seed": "tsx ./seed-scripts/tags.ts && tsx ./seed-scripts/categories.ts && tsx ./seed-scripts/sites.ts"
   },
