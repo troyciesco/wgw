@@ -19,20 +19,21 @@ export default withAuth(
     server: {
       cors: { origin: ["http://127.0.0.1:5173"], credentials: true },
     },
-    // db: {
-    //   // we're using sqlite for the fastest startup experience
-    //   //   for more information on what database might be appropriate for you
-    //   //   see https://keystonejs.com/docs/guides/choosing-a-database#title
-    //   provider: "postgresql",
-    //   url: "postgres://dbuser:dbpass@localhost:5432/keystone",
-    // },
     db: {
       // we're using sqlite for the fastest startup experience
       //   for more information on what database might be appropriate for you
       //   see https://keystonejs.com/docs/guides/choosing-a-database#title
-      provider: "sqlite",
-      url: "file:./keystone.db",
+      provider: "postgresql",
+      useMigrations: true,
+      url: process.env.DATABASE_URL || "",
     },
+    // db: {
+    //   // we're using sqlite for the fastest startup experience
+    //   //   for more information on what database might be appropriate for you
+    //   //   see https://keystonejs.com/docs/guides/choosing-a-database#title
+    //   provider: "sqlite",
+    //   url: "file:./keystone.db",
+    // },
     lists,
     session,
     ui: {
