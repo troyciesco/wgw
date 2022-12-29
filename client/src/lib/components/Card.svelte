@@ -4,6 +4,7 @@
   import Heart from "./Heart.svelte"
 
   export let site: any
+  export let imgLoading: "eager" | "lazy" = "eager"
 
   $: src = getImage(site.portraitImage, 2)
 </script>
@@ -23,6 +24,7 @@
       <img
         class="absolute w-full h-full object-cover rounded-lg transition-all duration-300 ease-in-out transform group-hover:scale-125"
         style="aspect-ratio: 4/3;"
+        loading={imgLoading}
         {src}
         alt={site.name} />
       <div

@@ -30,7 +30,9 @@
     </div>
     <div class="flex items-center justify-between gap-8 flex-wrap">
       {#each data.moreSites as site}
-        <Card {site} />
+        <Card
+          {site}
+          imgLoading="lazy" />
       {/each}
     </div>
   </section>
