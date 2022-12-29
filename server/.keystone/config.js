@@ -371,10 +371,11 @@ var session = (0, import_session.statelessSessions)({
 var keystone_default = withAuth(
   (0, import_core3.config)({
     server: {
-      cors: { origin: ["http://127.0.0.1:5173"], credentials: true }
+      cors: { origin: ["http://127.0.0.1:5173", "fleet-button-production.up.railway.app"], credentials: true }
     },
     db: {
       provider: "postgresql",
+      useMigrations: true,
       url: process.env.DATABASE_URL || `postgres://${process.env.USER}@localhost/keystone-6-example`
     },
     lists,
@@ -387,7 +388,7 @@ var keystone_default = withAuth(
         kind: "local",
         type: "image",
         transformName: (filename) => filename,
-        generateUrl: (path) => `http://localhost:3000/images${path}`,
+        generateUrl: (path) => `${process.env.BASE_URL || "http://localhost:3000"}/images${path}`,
         serverRoute: {
           path: "/images"
         },
@@ -397,7 +398,7 @@ var keystone_default = withAuth(
         kind: "local",
         type: "image",
         transformName: (filename) => filename,
-        generateUrl: (path) => `http://localhost:3000/responsive_images${path}`,
+        generateUrl: (path) => `${process.env.BASE_URL || "http://localhost:3000"}/responsive_images${path}`,
         serverRoute: {
           path: "/responsive_images"
         },

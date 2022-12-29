@@ -54,8 +54,7 @@ export default withAuth(
         kind: "local",
         type: "image",
         transformName: (filename) => filename,
-        generateUrl: (path) => `https://wgw-production.up.railway.app/responsive_images${path}`,
-        // generateUrl: (path) => `${process.env.BASE_URL || "http://localhost:3000"}/responsive_images${path}`,
+        generateUrl: (path) => `${process.env.BASE_URL || "http://localhost:3000"}/responsive_images${path}`,
         serverRoute: {
           path: "/responsive_images",
         },
