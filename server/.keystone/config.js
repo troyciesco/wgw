@@ -374,8 +374,9 @@ var keystone_default = withAuth(
       cors: { origin: ["http://127.0.0.1:5173"], credentials: true }
     },
     db: {
-      provider: "sqlite",
-      url: "file:./keystone.db"
+      provider: "postgresql",
+      useMigrations: true,
+      url: process.env.DATABASE_URL || ""
     },
     lists,
     session,
