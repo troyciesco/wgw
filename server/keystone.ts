@@ -44,7 +44,7 @@ export default withAuth(
         kind: "local",
         type: "image",
         transformName: (filename) => filename,
-        generateUrl: (path) => `http://localhost:3000/images${path}`,
+        generateUrl: (path) => `${process.env.BASE_URL || "http://localhost:3000"}/images${path}`,
         serverRoute: {
           path: "/images",
         },
