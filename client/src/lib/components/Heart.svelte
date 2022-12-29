@@ -34,12 +34,8 @@
     text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
   }
 
-  .heart-like-button.liked,
   .heart-like-button.liked {
     color: #d65076;
-  }
-
-  .heart-like-button.liked {
     animation: liked 0.25s ease-in-out;
   }
   @keyframes liked {
