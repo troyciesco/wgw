@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
@@ -5,10 +7,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        logo: ["Space Mono"],
-        headline: ["Barlow Condensed"],
-        sans: ["Barlow"],
-        mono: ["Space Mono"],
+        logo: ["Space Mono", ...defaultTheme.fontFamily.mono],
+        headline: ["Barlow Condensed", ...defaultTheme.fontFamily.sans],
+        sans: ["Barlow", ...defaultTheme.fontFamily.sans],
+        mono: ["Space Mono", ...defaultTheme.fontFamily.mono],
       },
     },
   },
