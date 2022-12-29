@@ -17,7 +17,7 @@ import { withAuth, session } from "./auth"
 export default withAuth(
   config({
     server: {
-      cors: { origin: ["http://127.0.0.1:5173"], credentials: true },
+      cors: { origin: ["http://127.0.0.1:5173", "fleet-button-production.up.railway.app"], credentials: true },
     },
     db: {
       // we're using sqlite for the fastest startup experience
