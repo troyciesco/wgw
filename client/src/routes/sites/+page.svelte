@@ -93,7 +93,8 @@
 
 <div class="pt-8">
   <!-- <h1 class="text-center text-6xl mb-8">Sites</h1> -->
-  <div class="max-w-7xl mx-auto flex items-baseline justify-between border-b border-gray-200 pt-10 pb-6 mb-10">
+  <div
+    class="max-w-7xl mx-auto flex items-baseline justify-between border-b border-gray-200 pt-10 pb-6 mb-10 px-4 md:px-0">
     <h1 class="text-6xl font-bold text-gray-900">All Sites</h1>
 
     <div class="flex items-center">
@@ -182,11 +183,10 @@
         </div>
       </div>
 
-      <button
+      <!-- <button
         type="button"
         class="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden">
         <span class="sr-only">Filters</span>
-        <!-- Heroicon name: mini/funnel -->
         <svg
           class="h-5 w-5"
           aria-hidden="true"
@@ -198,13 +198,13 @@
             d="M2.628 1.601C5.028 1.206 7.49 1 10 1s4.973.206 7.372.601a.75.75 0 01.628.74v2.288a2.25 2.25 0 01-.659 1.59l-4.682 4.683a2.25 2.25 0 00-.659 1.59v3.037c0 .684-.31 1.33-.844 1.757l-1.937 1.55A.75.75 0 018 18.25v-5.757a2.25 2.25 0 00-.659-1.591L2.659 6.22A2.25 2.25 0 012 4.629V2.34a.75.75 0 01.628-.74z"
             clip-rule="evenodd" />
         </svg>
-      </button>
+      </button> -->
     </div>
   </div>
 
-  <section class="max-w-7xl mx-auto grid grid-cols-12 gap-12 items-start">
+  <section class="max-w-7xl mx-auto grid grid-cols-12 md:gap-12 items-start">
     <aside
-      class="col-span-3 border rounded-lg dark:bg-slate-800 dark:shadow-cyan-600 dark:border-cyan-700 shadow-md px-6 py-6 flex flex-col h-full">
+      class="col-span-3 border rounded-lg dark:bg-slate-800 dark:shadow-cyan-600 dark:border-cyan-700 shadow-md px-6 py-6 hidden md:flex flex-col h-full">
       <div class="text-2xl">Filters</div>
       <div>
         <div class="flex flex-col">
@@ -244,7 +244,7 @@
         </div>
       </div>
     </aside>
-    <main class="col-span-9 flex mx-auto gap-10 items-center justify-start flex-wrap">
+    <main class="col-span-12 md:col-span-9 flex mx-auto gap-10 items-center justify-center md:justify-start flex-wrap">
       {#each data.sites as site}
         <LandscapeCard {site} />
       {/each}

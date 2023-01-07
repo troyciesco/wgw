@@ -21,7 +21,7 @@
     </div>
   {:else}
     <h1 class="text-center text-3xl mb-10">Submit a site</h1>
-    <div class="max-w-7xl mx-auto flex justify-center">
+    <div class="max-w-xl mx-auto flex flex-col px-10 justify-center">
       <form
         method="POST"
         action="?/submit-a-site"

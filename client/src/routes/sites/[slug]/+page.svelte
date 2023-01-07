@@ -11,7 +11,7 @@
 
 <main class="pt-10">
   <section class="max-w-7xl mx-auto mb-20">
-    <div class="flex items-center justify-between mb-10">
+    <div class="flex items-center justify-between px-4 md:px-0 mb-10">
       <h1 class="text-6xl font-headline font-bold">{data.name}</h1>
       {#if $page.data.user}
         <Heart
@@ -20,15 +20,15 @@
       {/if}
     </div>
 
-    <div class="grid grid-cols-12 gap-4">
-      <div class="col-span-9 w-full">
+    <div class="grid grid-cols-1 px-4 md:px-0 md:grid-cols-12 gap-4">
+      <div class="col-span-1 md:col-span-9 w-full">
         <img
           class="object-cover rounded-lg shadow-md shadow-cyan-600"
           style="aspect-ratio: 4/3;"
           {src}
           alt={data.name} />
       </div>
-      <div class="col-span-3">
+      <div class="col-span-1 md:col-span-3">
         <div
           class="border rounded-lg dark:bg-slate-800 shadow-cyan-600 border-cyan-700 shadow-md px-4 py-6 flex flex-col justify-between h-full">
           <div>
@@ -68,7 +68,7 @@
       </div>
     </div>
   </section>
-  <section class="max-w-prose mx-auto">
+  <section class="max-w-prose mx-auto px-4 md:px-0">
     <h2 class="text-5xl mb-4 font-bold">About this site</h2>
     <div class="space-y-4 mb-8">
       <p class="text-lg">{data.description}</p>

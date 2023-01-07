@@ -6,7 +6,7 @@
 </script>
 
 <main>
-  <div class="max-w-7xl mx-auto pt-10">
+  <div class="max-w-7xl mx-auto pt-10 px-4 md:px-0">
     <section class="mb-10">
       <h1 class="text-5xl text-center">Greetings, {user.name}.</h1>
     </section>
